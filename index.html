@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramadhan Kebaikan Tanpa Batas | Baitulmal Tazkia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Chosen Palette: Sacred Harmony (Cream Background, Navy Primary, Gold Accents) -->
+    <!-- Application Structure Plan: 
+         1. Hero Section: Menangkap perhatian dengan UVP "Amanah 100% via Santri".
+         2. AI Consultant ✨: Fitur baru bertenaga Gemini untuk menjawab pertanyaan donatur.
+         3. Trust Guarantee Section: Menjelaskan mekanisme verifikasi 72 jam secara visual.
+         4. Programs Grid: Daftar program donasi dengan filter interaktif.
+         5. Urgency Section: Countdown menuju Ramadhan untuk memicu FOMO.
+         6. Social Proof: Testimoni donatur dan statistik dampak tahun lalu.
+         7. Sticky Footer CTA: Memastikan akses donasi cepat di perangkat mobile.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FDFBFA;
+            color: #0F172A;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #B45309 0%, #D97706 100%);
+        }
+        .navy-bg {
+            background-color: #0F172A;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid #E2E8F0;
+        }
+        @keyframes pulse-gold {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(180, 83, 9, 0.4); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(180, 83, 9, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(180, 83, 9, 0); }
+        }
+        .btn-pulse {
+            animation: pulse-gold 2s infinite;
+        }
+        /* Custom Loading Animation for AI */
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #B45309;
+            border-radius: 50%;
+            display: inline-block;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header / Nav -->
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-2">
+                    <span class="text-3xl">🕌</span>
+                    <span class="font-extrabold text-xl tracking-tighter uppercase">Baitulmal <span class="text-amber-700">Tazkia</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 text-sm font-bold text-slate-600">
+                    <a href="#program" class="hover:text-amber-700">Program</a>
+                    <a href="#ai-consultant" class="hover:text-amber-700">✨ Konsultasi AI</a>
+                    <a href="#trust" class="hover:text-amber-700">Transparansi</a>
+                    <a href="#dampak" class="hover:text-amber-700">Dampak</a>
+                </div>
+                <a href="#program" class="bg-slate-900 text-white px-5 py-2.5 rounded-full text-sm font-bold hover:bg-slate-800 transition">Donasi</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION -->
+    <header class="relative bg-white pt-16 pb-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center space-y-8 max-w-4xl mx-auto">
+                <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-amber-50 border border-amber-100 text-amber-800 text-xs font-bold uppercase tracking-widest">
+                    Campaign Ramadhan 2026
+                </div>
+                <h1 class="text-4xl md:text-7xl font-black text-slate-900 leading-tight">
+                    Ramadhan Kebaikan <br><span class="text-amber-600">Tanpa Batas</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-600 font-medium">
+                    Wujudkan senyum saudara kita di pelosok Nusantara. Diverifikasi, disalurkan, dan dilaporkan langsung oleh jaringan <span class="text-slate-900 font-bold">Santri Tazkia</span> dalam maksimal 72 jam.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+                    <a href="#program" class="gold-gradient text-white px-10 py-5 rounded-full font-extrabold text-lg shadow-xl shadow-amber-700/30 hover:shadow-amber-700/50 transition-all btn-pulse">
+                        DONASI SEKARANG
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-amber-50 rounded-full blur-3xl opacity-50"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50"></div>
+    </header>
+
+    <!-- 2. AI CONSULTANT SECTION ✨ -->
+    <section id="ai-consultant" class="py-24 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-amber-50 rounded-[3rem] p-8 md:p-16 card-shadow flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2 space-y-6">
+                    <div class="inline-flex items-center px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase">✨ Didukung Gemini AI</div>
+                    <h2 class="text-3xl md:text-4xl font-black text-slate-900">✨ Konsultan Zakat Digital</h2>
+                    <p class="text-slate-600 font-medium">Bingung cara hitung zakat mal? Atau ingin tahu keutamaan wakaf sumur? Tanyakan saja pada asisten pintar kami untuk mendapatkan jawaban personal berdasarkan prinsip syariah.</p>
+                    <div class="space-y-3">
+                        <button onclick="setSuggestion('Berapa zakat mal jika tabungan saya 100 juta?')" class="text-xs bg-white px-4 py-2 rounded-full border border-amber-200 hover:bg-amber-100 transition mr-2 mb-2">"Hitung zakat tabungan 100jt"</button>
+                        <button onclick="setSuggestion('Apa manfaat wakaf sumur bagi desa pelosok?')" class="text-xs bg-white px-4 py-2 rounded-full border border-amber-200 hover:bg-amber-100 transition mr-2 mb-2">"Manfaat wakaf sumur"</button>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 w-full bg-white rounded-3xl border border-amber-100 p-6 shadow-inner min-h-[400px] flex flex-col">
+                    <div id="chat-history" class="flex-grow space-y-4 mb-4 overflow-y-auto max-h-[300px] p-2">
+                        <div class="bg-slate-50 p-4 rounded-2xl rounded-tl-none text-sm text-slate-700">
+                            Assalamualaikum! Saya Konsultan Digital Baitulmal Tazkia. Ada yang bisa saya bantu terkait zakat atau sedekah hari ini?
+                        </div>
+                    </div>
+                    <div id="ai-loading" class="hidden pb-4 pl-2">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+                    <div class="flex gap-2">
+                        <input type="text" id="ai-input" placeholder="Tanyakan sesuatu..." class="flex-grow bg-slate-100 rounded-full px-6 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        <button onclick="askGemini()" class="bg-amber-700 text-white p-3 rounded-full hover:bg-amber-800 transition shadow-md">
+                            <span>🚀</span>
+                        </button>
+                    </div>
+                    <p class="text-[10px] text-slate-400 mt-3 text-center italic">AI dapat memberikan estimasi, konsultasikan kembali dengan ahli zakat kami untuk kepastian hukum.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. TRUST GUARANTEE SECTION -->
+    <section id="trust" class="py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="text-3xl md:text-4xl font-black italic">The Trust Guarantee</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Kami memahami bahwa kepercayaan adalah amanah terbesar. Inilah cara kami memastikan setiap rupiah Anda sampai ke akar.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="text-center space-y-4 group">
+                    <div class="w-20 h-20 bg-white/10 rounded-3xl mx-auto flex items-center justify-center text-4xl group-hover:bg-amber-600 transition-colors">🎓</div>
+                    <h3 class="text-xl font-bold">Verifikasi Santri</h3>
+                    <p class="text-slate-400 text-sm">Lokasi penerima manfaat dicek langsung oleh jaringan santri kami, memastikan bantuan tepat sasaran.</p>
+                </div>
+                <div class="text-center space-y-4 group">
+                    <div class="w-20 h-20 bg-white/10 rounded-3xl mx-auto flex items-center justify-center text-4xl group-hover:bg-amber-600 transition-colors">⏱️</div>
+                    <h3 class="text-xl font-bold">Laporan 72 Jam</h3>
+                    <p class="text-slate-400 text-sm">Donatur menerima update penyaluran via WhatsApp maksimal 3 hari setelah donasi disalurkan ke lapangan.</p>
+                </div>
+                <div class="text-center space-y-4 group">
+                    <div class="w-20 h-20 bg-white/10 rounded-3xl mx-auto flex items-center justify-center text-4xl group-hover:bg-amber-600 transition-colors">📍</div>
+                    <h3 class="text-xl font-bold">Transparansi Visual</h3>
+                    <p class="text-slate-400 text-sm">Laporan disertai foto/video asli dengan penanda lokasi (geotagging) untuk akuntabilitas penuh.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. RAMADHAN PROGRAMS (Cards) -->
+    <section id="program" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div class="space-y-2">
+                    <h2 class="text-3xl font-black text-slate-900">Pilih Kebaikanmu</h2>
+                    <p class="text-slate-500">Pilih paket donasi yang ingin Anda dukung di Ramadhan ini.</p>
+                </div>
+                <div class="flex bg-slate-100 p-1 rounded-xl">
+                    <button class="px-6 py-2 rounded-lg text-sm font-bold bg-white shadow-sm">Semua</button>
+                    <button class="px-6 py-2 rounded-lg text-sm font-bold text-slate-500 hover:text-slate-800 transition">Fisik</button>
+                    <button class="px-6 py-2 rounded-lg text-sm font-bold text-slate-500 hover:text-slate-800 transition">Sosial</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white border border-slate-100 rounded-[2rem] overflow-hidden card-shadow hover:-translate-y-2 transition-transform cursor-pointer">
+                    <div class="h-48 bg-slate-200 flex items-center justify-center text-4xl">🕌</div>
+                    <div class="p-6 space-y-4">
+                        <h4 class="font-bold text-lg text-slate-900 leading-tight">Renovasi Masjid Pelosok</h4>
+                        <p class="text-xs text-slate-500">Bantu perbaiki atap dan sarana ibadah jamaah desa.</p>
+                        <div class="pt-4 border-t border-slate-50">
+                            <span class="text-xs font-bold text-slate-400 uppercase">Mulai Dari</span>
+                            <div class="text-xl font-black text-amber-700">Rp 50.000</div>
+                        </div>
+                        <button class="w-full py-3 bg-slate-900 text-white rounded-xl font-bold text-sm hover:bg-slate-800 transition">Pilih Paket</button>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white border border-slate-100 rounded-[2rem] overflow-hidden card-shadow hover:-translate-y-2 transition-transform cursor-pointer">
+                    <div class="h-48 bg-slate-200 flex items-center justify-center text-4xl">📦</div>
+                    <div class="p-6 space-y-4">
+                        <h4 class="font-bold text-lg text-slate-900 leading-tight">Paket Pangan Lansia</h4>
+                        <p class="text-xs text-slate-500">Hadiah sembako dan buka puasa untuk lansia dhuafa.</p>
+                        <div class="pt-4 border-t border-slate-50">
+                            <span class="text-xs font-bold text-slate-400 uppercase">Mulai Dari</span>
+                            <div class="text-xl font-black text-amber-700">Rp 25.000</div>
+                        </div>
+                        <button class="w-full py-3 bg-slate-900 text-white rounded-xl font-bold text-sm hover:bg-slate-800 transition">Pilih Paket</button>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white border border-slate-100 rounded-[2rem] overflow-hidden card-shadow hover:-translate-y-2 transition-transform cursor-pointer">
+                    <div class="h-48 bg-slate-200 flex items-center justify-center text-4xl">💧</div>
+                    <div class="p-6 space-y-4">
+                        <h4 class="font-bold text-lg text-slate-900 leading-tight">Sumur Air Bersih</h4>
+                        <p class="text-xs text-slate-500">Alirkan pahala jariyah melalui air bersih desa.</p>
+                        <div class="pt-4 border-t border-slate-50">
+                            <span class="text-xs font-bold text-slate-400 uppercase">Mulai Dari</span>
+                            <div class="text-xl font-black text-amber-700">Rp 50.000</div>
+                        </div>
+                        <button class="w-full py-3 bg-slate-900 text-white rounded-xl font-bold text-sm hover:bg-slate-800 transition">Pilih Paket</button>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-white border border-slate-100 rounded-[2rem] overflow-hidden card-shadow hover:-translate-y-2 transition-transform cursor-pointer">
+                    <div class="h-48 bg-slate-200 flex items-center justify-center text-4xl">📖</div>
+                    <div class="p-6 space-y-4">
+                        <h4 class="font-bold text-lg text-slate-900 leading-tight">Wakaf Al-Qur'an</h4>
+                        <p class="text-xs text-slate-500">Mushaf baru untuk santri penghafal Quran di pelosok.</p>
+                        <div class="pt-4 border-t border-slate-50">
+                            <span class="text-xs font-bold text-slate-400 uppercase">Mulai Dari</span>
+                            <div class="text-xl font-black text-amber-700">Rp 75.000</div>
+                        </div>
+                        <button class="w-full py-3 bg-slate-900 text-white rounded-xl font-bold text-sm hover:bg-slate-800 transition">Pilih Paket</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. URGENCY SECTION (Countdown) -->
+    <section class="py-20 gold-gradient text-white overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+            <h3 class="text-2xl font-bold mb-8 uppercase tracking-widest">H-10 Menuju Ramadhan</h3>
+            <p class="text-4xl md:text-5xl font-black mb-12">Akankah saudara kita sahur <br>dengan air putih lagi?</p>
+            
+            <div class="flex justify-center gap-4 md:gap-8">
+                <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl w-24 md:w-32 border border-white/20">
+                    <div id="days" class="text-3xl md:text-5xl font-black">09</div>
+                    <div class="text-[10px] md:text-xs font-bold uppercase tracking-widest mt-2">Hari</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl w-24 md:w-32 border border-white/20">
+                    <div id="hours" class="text-3xl md:text-5xl font-black">23</div>
+                    <div class="text-[10px] md:text-xs font-bold uppercase tracking-widest mt-2">Jam</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl w-24 md:w-32 border border-white/20">
+                    <div id="minutes" class="text-3xl md:text-5xl font-black">45</div>
+                    <div class="text-[10px] md:text-xs font-bold uppercase tracking-widest mt-2">Menit</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl w-24 md:w-32 border border-white/20">
+                    <div id="seconds" class="text-3xl md:text-5xl font-black">12</div>
+                    <div class="text-[10px] md:text-xs font-bold uppercase tracking-widest mt-2">Detik</div>
+                </div>
+            </div>
+            
+            <div class="mt-12">
+                <a href="#program" class="bg-white text-amber-800 px-8 py-4 rounded-full font-black hover:bg-slate-50 transition shadow-lg">AMBIL PERAN SEKARANG</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 6. SOCIAL PROOF (Dampak & Testimoni) -->
+    <section id="dampak" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <h2 class="text-4xl font-black text-slate-900 leading-tight">Kepercayaan yang <br>Terus Tumbuh</h2>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="text-4xl">👨‍👩‍👧‍👦</div>
+                            <div>
+                                <div class="text-3xl font-black text-slate-900">15.400+</div>
+                                <p class="text-slate-500 font-medium">Penerima Manfaat Tahun 2025</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-4xl">📍</div>
+                            <div>
+                                <div class="text-3xl font-black text-slate-900">50+</div>
+                                <p class="text-slate-500 font-medium">Titik Pelosok Terjangkau</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-[2rem] card-shadow border border-slate-100 relative">
+                        <span class="absolute -top-4 -left-4 text-4xl">💬</span>
+                        <p class="text-slate-600 italic mb-4 leading-relaxed">"Alhamdulillah laporannya cepat dan fotonya jelas, jadi tenang donasi di sini. Senang lihat langsung foto adik-adik santri nerima Quran barunya."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-slate-200"></div>
+                            <div>
+                                <div class="text-sm font-bold text-slate-900">Hj. Siti Aminah</div>
+                                <div class="text-xs text-slate-400">Donatur Sejak 2023</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-[2rem] card-shadow border border-slate-100 relative ml-8">
+                        <p class="text-slate-600 italic mb-4 leading-relaxed">"Sistem verifikasi santrinya keren. Kita jadi tahu kalau sumur yang kita bangun beneran dipake wudhu sama warga desa."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-slate-200"></div>
+                            <div>
+                                <div class="text-sm font-bold text-slate-900">Bpk. Ahmad</div>
+                                <div class="text-xs text-slate-400">Donatur Corporate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-slate-100 mb-20 md:mb-0">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Baitulmal Tazkia - Kebaikan Tanpa Batas</p>
+            <p class="text-sm text-slate-500 mb-8 max-w-md mx-auto">Jl. Ir. H. Djuanda No. 78, Sentul City - Bogor. <br>Lembaga Amil Zakat yang Amanah dan Terpercaya.</p>
+            <div class="flex justify-center gap-6 text-2xl grayscale opacity-50">
+                <span>📱</span> <span>📸</span> <span>🌐</span> <span>📩</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STICKY FOOTER CTA (Mobile) -->
+    <div class="sticky-cta md:hidden p-4">
+        <div class="flex items-center justify-between gap-4">
+            <div class="flex-1">
+                <div class="text-xs font-bold text-slate-400 uppercase">Donasi Mulai</div>
+                <div class="text-lg font-black text-amber-700">Rp 25.000</div>
+            </div>
+            <a href="#program" class="gold-gradient text-white px-8 py-3 rounded-xl font-black text-sm shadow-lg">DONASI QRIS</a>
+        </div>
+    </div>
+
+    <script>
+        const apiKey = "";
+        
+        async function callGemini(prompt) {
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            const systemPrompt = "Kamu adalah Konsultan Zakat & Kebaikan Digital yang ramah dan ahli dari Baitulmal Tazkia. Tugasmu membantu calon donatur memahami zakat, sedekah, dan manfaat program-program Tazkia (Renovasi Masjid, Sumur Gali, Paket Pangan, Wakaf Quran). Gunakan bahasa yang sopan, hangat, dan persuasif. Jika ditanya perhitungan, berikan estimasi yang mudah dipahami. Berikan jawaban dalam bahasa Indonesia.";
+            
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }],
+                systemInstruction: { parts: [{ text: systemPrompt }] }
+            };
+
+            for (let i = 0; i < 5; i++) {
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (!response.ok) throw new Error('API Error');
+                    const result = await response.json();
+                    return result.candidates?.[0]?.content?.parts?.[0]?.text || "Maaf, saya sedang tidak bisa merespons. Silakan coba sesaat lagi.";
+                } catch (error) {
+                    if (i === 4) throw error;
+                    await new Promise(res => setTimeout(res, Math.pow(2, i) * 1000));
+                }
+            }
+        }
+
+        async function askGemini() {
+            const input = document.getElementById('ai-input');
+            const history = document.getElementById('chat-history');
+            const loading = document.getElementById('ai-loading');
+            const text = input.value.trim();
+            
+            if (!text) return;
+
+            // Add user message
+            const userMsg = document.createElement('div');
+            userMsg.className = "bg-amber-100 p-4 rounded-2xl rounded-tr-none text-sm text-amber-900 self-end ml-auto max-w-[80%]";
+            userMsg.textContent = text;
+            history.appendChild(userMsg);
+            
+            input.value = "";
+            loading.classList.remove('hidden');
+            history.scrollTop = history.scrollHeight;
+
+            try {
+                const response = await callGemini(text);
+                loading.classList.add('hidden');
+                
+                const aiMsg = document.createElement('div');
+                aiMsg.className = "bg-slate-50 p-4 rounded-2xl rounded-tl-none text-sm text-slate-700 max-w-[80%]";
+                aiMsg.textContent = response;
+                history.appendChild(aiMsg);
+            } catch (error) {
+                loading.classList.add('hidden');
+                const errMsg = document.createElement('div');
+                errMsg.className = "bg-red-50 p-4 rounded-2xl text-xs text-red-600";
+                errMsg.textContent = "Maaf, terjadi kesalahan koneksi. Silakan hubungi WA kami untuk konsultasi langsung.";
+                history.appendChild(errMsg);
+            }
+            history.scrollTop = history.scrollHeight;
+        }
+
+        function setSuggestion(text) {
+            document.getElementById('ai-input').value = text;
+            askGemini();
+        }
+
+        // Countdown Timer Logic
+        function updateCountdown() {
+            const targetDate = new Date();
+            targetDate.setDate(targetDate.getDate() + 9);
+            targetDate.setHours(targetDate.getHours() + 23);
+            
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = d.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = h.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = m.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = s.toString().padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Smooth Scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Handle Enter key for AI Input
+        document.getElementById('ai-input').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                askGemini();
+            }
+        });
+    </script>
+</body>
+</html>
